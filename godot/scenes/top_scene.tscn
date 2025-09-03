@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ct1u0q27xnh8k"]
+
+[ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_e7hqm"]
+[ext_resource type="Texture2D" uid="uid://dc6rwhh8po2v3" path="res://assets/sprites/pirate-objects/Ship.png" id="2_lxc7h"]
+
+[node name="TopScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+limit_top = 432
+
+[node name="Ship" type="Sprite2D" parent="."]
+position = Vector2(127, 547)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_lxc7h")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_e7hqm")]
+offset = Vector2(0, 324)
+scale = Vector2(0.5, 0.5)
+transform = Transform2D(0.5, 0, 0, 0.5, 0, 324)

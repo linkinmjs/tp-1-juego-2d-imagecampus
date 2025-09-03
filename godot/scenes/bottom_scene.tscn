@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwtlwto8dapiv"]
+
+[ext_resource type="Script" uid="uid://dsliubugmiwpq" path="res://scripts/bottom_scene.gd" id="1_7ymyq"]
+[ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_jtje2"]
+[ext_resource type="PackedScene" uid="uid://pv41slx65h2q" path="res://scenes/ship.tscn" id="6_tble6"]
+[ext_resource type="PackedScene" uid="uid://bt6ej2icbaj5w" path="res://scenes/parrot.tscn" id="7_uyn6v"]
+
+[node name="BottomScene" type="Node2D"]
+script = ExtResource("1_7ymyq")
+
+[node name="ParallaxBackground" parent="." instance=ExtResource("2_jtje2")]
+
+[node name="Ship" parent="." instance=ExtResource("6_tble6")]
+position = Vector2(605, 346)
+
+[node name="Parrot" parent="." instance=ExtResource("7_uyn6v")]
+position = Vector2(176, 72)
+
+[node name="Camera2D" type="Camera2D" parent="Parrot"]
+limit_left = 0
+limit_top = 0
+limit_right = 1152
+limit_bottom = 648

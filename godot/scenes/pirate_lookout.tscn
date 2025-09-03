@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=3 uid="uid://cmu88cf6l61gd"]
+
+[ext_resource type="Texture2D" uid="uid://b6nl6jod4axyv" path="res://assets/sprites/characters/pirate-03/Attack.png" id="1_qrfmu"]
+[ext_resource type="Texture2D" uid="uid://b6t163qm4fyr5" path="res://assets/sprites/characters/pirate-03/Idle2.png" id="2_6g0nl"]
+[ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="3_6g0nl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4u6f"]
+atlas = ExtResource("1_qrfmu")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btn0m"]
+atlas = ExtResource("1_qrfmu")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcrnk"]
+atlas = ExtResource("1_qrfmu")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jugcu"]
+atlas = ExtResource("1_qrfmu")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ms7b"]
+atlas = ExtResource("1_qrfmu")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ljaog"]
+atlas = ExtResource("1_qrfmu")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ek0"]
+atlas = ExtResource("2_6g0nl")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_icw82"]
+atlas = ExtResource("2_6g0nl")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16yft"]
+atlas = ExtResource("2_6g0nl")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdtce"]
+atlas = ExtResource("2_6g0nl")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mv053"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4u6f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btn0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcrnk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jugcu")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_7ms7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ljaog")
+}],
+"loop": false,
+"name": &"action",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ek0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_icw82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16yft")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdtce")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrfmu"]
+size = Vector2(16.5, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c4u6f"]
+size = Vector2(16.5, 7.5)
+
+[node name="PirateLookout" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 4
+script = ExtResource("3_6g0nl")
+
+[node name="Pirate" type="AnimatedSprite2D" parent="."]
+position = Vector2(28, -48)
+sprite_frames = SubResource("SpriteFrames_mv053")
+animation = &"action"
+autoplay = "idle"
+frame = 5
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -22)
+shape = SubResource("RectangleShape2D_qrfmu")
+one_way_collision = true
+
+[node name="ActionArea" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+position = Vector2(0, -28.5)
+shape = SubResource("RectangleShape2D_c4u6f")
+debug_color = Color(0.2, 0.552941, 0.278431, 0.266667)
