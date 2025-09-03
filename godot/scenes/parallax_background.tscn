@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c5kqi0tjv1dm7"]
 
-[ext_resource type="Texture2D" uid="uid://g2doxcgkhm34" path="res://assets/backgrounds/ocean-8/1.png" id="1_bpahb"]
+[ext_resource type="Texture2D" uid="uid://g2doxcgkhm34" path="res://assets/backgrounds/ocean_8/1.png" id="1_bpahb"]
 [ext_resource type="Script" uid="uid://cebvcfcj50s7x" path="res://scripts/parallax_background.gd" id="1_qs7dk"]
-[ext_resource type="Texture2D" uid="uid://bdj1psfrkuou4" path="res://assets/backgrounds/ocean-8/2.png" id="2_qs7dk"]
-[ext_resource type="Texture2D" uid="uid://bi8o1lk2orlmu" path="res://assets/backgrounds/ocean-8/3.png" id="3_2oy3k"]
-[ext_resource type="Texture2D" uid="uid://cx1x81hmvnwmp" path="res://assets/backgrounds/ocean-8/4.png" id="4_jy56r"]
-[ext_resource type="Texture2D" uid="uid://seec6o26rsxb" path="res://assets/backgrounds/ocean-8/5.png" id="5_11q5a"]
+[ext_resource type="Texture2D" uid="uid://bdj1psfrkuou4" path="res://assets/backgrounds/ocean_8/2.png" id="2_qs7dk"]
+[ext_resource type="Texture2D" uid="uid://bi8o1lk2orlmu" path="res://assets/backgrounds/ocean_8/3.png" id="3_2oy3k"]
+[ext_resource type="Texture2D" uid="uid://cx1x81hmvnwmp" path="res://assets/backgrounds/ocean_8/4.png" id="4_jy56r"]
+[ext_resource type="Texture2D" uid="uid://seec6o26rsxb" path="res://assets/backgrounds/ocean_8/5.png" id="5_11q5a"]
 
 [node name="ParallaxBackground" type="ParallaxBackground"]
 follow_viewport_enabled = true

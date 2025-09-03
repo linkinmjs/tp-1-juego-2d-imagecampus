@@ -21,3 +21,5 @@ limit_left = 0
 limit_top = 0
 limit_right = 1152
 limit_bottom = 648
+
+[node name="Collectibles" type="Node2D" parent="."]
