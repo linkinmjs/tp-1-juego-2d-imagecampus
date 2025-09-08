@@ -8,18 +8,21 @@
 [node name="BottomScene" type="Node2D"]
 script = ExtResource("1_7ymyq")
 
-[node name="ParallaxBackground" parent="." instance=ExtResource("2_jtje2")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ParallaxBackground" parent="CanvasLayer" instance=ExtResource("2_jtje2")]
 
 [node name="Ship" parent="." instance=ExtResource("6_tble6")]
-position = Vector2(605, 346)
-
-[node name="Parrot" parent="." instance=ExtResource("7_uyn6v")]
-position = Vector2(176, 72)
-
-[node name="Camera2D" type="Camera2D" parent="Parrot"]
-limit_left = 0
-limit_top = 0
-limit_right = 1152
-limit_bottom = 648
+position = Vector2(1324, 875)
 
 [node name="Collectibles" type="Node2D" parent="."]
+
+[node name="Parrot" parent="." instance=ExtResource("7_uyn6v")]
+position = Vector2(1228, 703)
+
+[node name="Camera2D" type="Camera2D" parent="Parrot"]
+position = Vector2(0, -14)
+limit_left = 0
+limit_top = 0
+limit_right = 2650
+limit_bottom = 1296
