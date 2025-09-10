@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://bt6ej2icbaj5w"]
+[gd_scene load_steps=21 format=3 uid="uid://bt6ej2icbaj5w"]
 
 [ext_resource type="Texture2D" uid="uid://dduu5inmovyyl" path="res://assets/sprites/characters/parrot/Walk.png" id="1_i6g64"]
 [ext_resource type="Script" uid="uid://c43tt75pdq2e5" path="res://scripts/parrot.gd" id="1_vda7l"]
@@ -124,12 +124,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vda7l"]
 size = Vector2(11, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nuuxd"]
-
 [node name="Parrot" type="CharacterBody2D"]
 z_index = 10
 texture_filter = 1
-collision_mask = 6
+collision_mask = 14
 script = ExtResource("1_vda7l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -142,14 +140,3 @@ frame_progress = 0.446816
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, -14)
 shape = SubResource("RectangleShape2D_vda7l")
-
-[node name="Hitbox" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(0, -12)
-shape = SubResource("RectangleShape2D_nuuxd")
-debug_color = Color(0.646417, 0.247677, 0.231455, 0.42)
-
-[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

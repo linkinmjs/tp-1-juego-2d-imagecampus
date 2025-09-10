@@ -1,0 +1,74 @@
+[gd_scene load_steps=11 format=3 uid="uid://dawlnpeue82ul"]
+
+[ext_resource type="Texture2D" uid="uid://db5mpgyydxswx" path="res://assets/sprites/characters/bird_01/Walk.png" id="1_kqhkv"]
+[ext_resource type="Script" uid="uid://djhlvygeexugo" path="res://scripts/bird.gd" id="2_3po83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyn6v"]
+atlas = ExtResource("1_kqhkv")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ymyq"]
+atlas = ExtResource("1_kqhkv")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gti6a"]
+atlas = ExtResource("1_kqhkv")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8umi"]
+atlas = ExtResource("1_kqhkv")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt6qn"]
+atlas = ExtResource("1_kqhkv")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6df1x"]
+atlas = ExtResource("1_kqhkv")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uasgt"]
+animations = [{
+"frames": [{
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_uyn6v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ymyq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gti6a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8umi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt6qn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6df1x")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kqhkv"]
+size = Vector2(19.8333, 9.83333)
+
+[node name="Bird" type="AnimatedSprite2D"]
+texture_filter = 1
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_uasgt")
+animation = &"flying"
+autoplay = "flying"
+frame_progress = 0.201416
+script = ExtResource("2_3po83")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.666667, 3)
+shape = SubResource("RectangleShape2D_kqhkv")

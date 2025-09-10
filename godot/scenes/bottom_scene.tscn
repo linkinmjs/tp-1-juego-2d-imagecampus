@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwtlwto8dapiv"]
+[gd_scene load_steps=8 format=3 uid="uid://dwtlwto8dapiv"]
 
 [ext_resource type="Script" uid="uid://dsliubugmiwpq" path="res://scripts/bottom_scene.gd" id="1_7ymyq"]
 [ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_jtje2"]
 [ext_resource type="PackedScene" uid="uid://dkm4v4jyo147e" path="res://scenes/coin.tscn" id="4_djfjt"]
+[ext_resource type="PackedScene" uid="uid://dawlnpeue82ul" path="res://scenes/bird.tscn" id="4_tble6"]
 [ext_resource type="PackedScene" uid="uid://pv41slx65h2q" path="res://scenes/ship.tscn" id="6_tble6"]
+[ext_resource type="PackedScene" uid="uid://d0h3o5yaj5ufk" path="res://scenes/enemies_spawn.tscn" id="6_uyn6v"]
 [ext_resource type="PackedScene" uid="uid://bt6ej2icbaj5w" path="res://scenes/parrot.tscn" id="7_uyn6v"]
 
 [node name="BottomScene" type="Node2D"]
@@ -16,15 +18,13 @@ script = ExtResource("1_7ymyq")
 [node name="Ship" parent="." instance=ExtResource("6_tble6")]
 position = Vector2(1324, 875)
 
-[node name="Enemies" type="Node2D" parent="."]
+[node name="CollectiblesSpawn" type="Node2D" parent="."]
 
-[node name="Collectibles" type="Node2D" parent="."]
-
-[node name="Coin" parent="Collectibles" instance=ExtResource("4_djfjt")]
+[node name="Coin" parent="CollectiblesSpawn" instance=ExtResource("4_djfjt")]
 position = Vector2(1258, 713)
 
 [node name="Parrot" parent="." instance=ExtResource("7_uyn6v")]
-position = Vector2(1228, 703)
+position = Vector2(1234, 712)
 
 [node name="Camera2D" type="Camera2D" parent="Parrot"]
 position = Vector2(0, -14)
@@ -33,3 +33,8 @@ limit_left = 0
 limit_top = 0
 limit_right = 2650
 limit_bottom = 1296
+
+[node name="EnemiesSpawn" parent="." instance=ExtResource("6_uyn6v")]
+
+[node name="Bird" parent="EnemiesSpawn" instance=ExtResource("4_tble6")]
+position = Vector2(837, 672)

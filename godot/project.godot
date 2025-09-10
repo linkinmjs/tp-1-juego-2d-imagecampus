@@ -65,6 +65,7 @@ action={
 2d_physics/layer_1="player"
 2d_physics/layer_2="ship"
 2d_physics/layer_3="collectibles"
+2d_physics/layer_4="enemies"
 
 [rendering]
 
