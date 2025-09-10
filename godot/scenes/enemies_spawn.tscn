@@ -15,8 +15,12 @@ position = Vector2(1341.5, 653)
 shape = SubResource("RectangleShape2D_tble6")
 debug_color = Color(0.780392, 0.254902, 0.87451, 0.0235294)
 
-[node name="SpawnTimer" type="Timer" parent="."]
+[node name="SpawnSingleEnemyTimer" type="Timer" parent="."]
 wait_time = 0.5
+one_shot = true
+
+[node name="WaveIntervalTimer" type="Timer" parent="."]
+wait_time = 10.0
 one_shot = true
 
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]
