@@ -100,6 +100,7 @@ script = ExtResource("3_6g0nl")
 pirate_class = "pirate_lookout"
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(28, -48)
 sprite_frames = SubResource("SpriteFrames_mv053")
 animation = &"action"

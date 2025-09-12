@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tble6"]
 size = Vector2(2703, 1326)
 
-[node name="EnemiesSpawn" type="Area2D"]
+[node name="Spawn" type="Area2D"]
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_1wr2l")
@@ -20,7 +20,7 @@ debug_color = Color(0.780392, 0.254902, 0.87451, 0.0235294)
 [node name="SpawnSingleEnemyTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="WaveIntervalTimer" type="Timer" parent="."]
+[node name="HordeIntervalTimer" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
 

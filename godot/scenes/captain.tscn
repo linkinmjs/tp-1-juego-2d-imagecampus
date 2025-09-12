@@ -134,6 +134,7 @@ script = ExtResource("1_i1u5c")
 pirate_class = "captain"
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(9, -24)
 sprite_frames = SubResource("SpriteFrames_i3jyy")
 animation = &"idle"

@@ -15,19 +15,19 @@ var left_limit_spawn: int = -abs(10)
 var right_limit_spawn: int = abs(2900)
 
 @onready var spawn_single_enemy_timer: Timer = $SpawnSingleEnemyTimer
-@onready var wave_interval_timer: Timer = $WaveIntervalTimer
+@onready var horde_interval_timer: Timer = $HordeIntervalTimer
 
 
 func _ready() -> void:
 	pass
 	
 func _process(delta: float) -> void:
-	if wave_interval_timer.is_stopped():
-		wave_interval_timer.start()
-		await wave_interval_timer.timeout
+	if horde_interval_timer.is_stopped():
+		horde_interval_timer.start()
+		await horde_interval_timer.timeout
 		spawn_enemies()
 
-func spawn_enemies():
+func spawn_enemies() -> void:
 	var spawn_side = spawn_sides.pick_random()
 	for i in range(quantity):
 		spawn_single_enemy_timer.start()
@@ -43,11 +43,10 @@ func spawn_enemies():
 			enemy.speed = -abs(enemy.speed)
 		add_child(enemy)
 
-func modify_spawn(min_s: int, max_s: int, q: int):
+func modify_spawn(min_s: int, max_s: int, q: int) -> void:
 	min_speed = min_s
 	max_speed = max_s
 	quantity = q
 	
-
 func _on_area_exited(area: Area2D) -> void:
 	area.get_parent().queue_free()

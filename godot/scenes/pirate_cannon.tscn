@@ -160,6 +160,7 @@ pirate_has_cannon = true
 pirate_class = "pirate_cannon"
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(30, -48)
 sprite_frames = SubResource("SpriteFrames_tddbd")
 animation = &"action"
@@ -171,6 +172,7 @@ shape = SubResource("RectangleShape2D_aw8to")
 one_way_collision = true
 
 [node name="Cannon" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
 position = Vector2(66, -48)
 sprite_frames = SubResource("SpriteFrames_dga35")
 animation = &"idle"

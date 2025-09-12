@@ -34,7 +34,7 @@ limit_top = 0
 limit_right = 2650
 limit_bottom = 1296
 
-[node name="EnemiesSpawn" parent="." instance=ExtResource("6_uyn6v")]
+[node name="Spawn" parent="." instance=ExtResource("6_uyn6v")]
 
-[node name="Bird" parent="EnemiesSpawn" instance=ExtResource("4_tble6")]
+[node name="Bird" parent="Spawn" instance=ExtResource("4_tble6")]
 position = Vector2(837, 672)
