@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cmu88cf6l61gd"]
 
-[ext_resource type="Texture2D" uid="uid://b6nl6jod4axyv" path="res://assets/sprites/characters/pirate-03/Attack.png" id="1_qrfmu"]
-[ext_resource type="Texture2D" uid="uid://b6t163qm4fyr5" path="res://assets/sprites/characters/pirate-03/Idle2.png" id="2_6g0nl"]
+[ext_resource type="Texture2D" uid="uid://b6nl6jod4axyv" path="res://assets/sprites/characters/pirate_03/Attack.png" id="1_qrfmu"]
+[ext_resource type="Texture2D" uid="uid://b6t163qm4fyr5" path="res://assets/sprites/characters/pirate_03/Idle2.png" id="2_6g0nl"]
 [ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="3_6g0nl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c4u6f"]
@@ -97,6 +97,7 @@ size = Vector2(16.5, 7.5)
 scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("3_6g0nl")
+pirate_class = "pirate_lookout"
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
 position = Vector2(28, -48)

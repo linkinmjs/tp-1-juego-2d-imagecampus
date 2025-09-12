@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://51p65lhgra6s"]
 
-[ext_resource type="Texture2D" uid="uid://dwhorx0jimqgx" path="res://assets/sprites/characters/pirate-02/Attack.png" id="1_aw8to"]
+[ext_resource type="Texture2D" uid="uid://dwhorx0jimqgx" path="res://assets/sprites/characters/pirate_02/Attack.png" id="1_aw8to"]
 [ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="1_us4qm"]
-[ext_resource type="Texture2D" uid="uid://btuxg2qik4o1m" path="res://assets/sprites/characters/pirate-02/Idle.png" id="2_5y60m"]
-[ext_resource type="Texture2D" uid="uid://dnhms221x1c3v" path="res://assets/sprites/characters/pirate-02/Special.png" id="3_5y60m"]
+[ext_resource type="Texture2D" uid="uid://btuxg2qik4o1m" path="res://assets/sprites/characters/pirate_02/Idle.png" id="2_5y60m"]
+[ext_resource type="Texture2D" uid="uid://dnhms221x1c3v" path="res://assets/sprites/characters/pirate_02/Special.png" id="3_5y60m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_us4qm"]
 atlas = ExtResource("1_aw8to")
@@ -157,6 +157,7 @@ scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_us4qm")
 pirate_has_cannon = true
+pirate_class = "pirate_cannon"
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
 position = Vector2(30, -48)

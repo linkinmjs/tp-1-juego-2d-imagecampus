@@ -1,9 +1,9 @@
 [gd_scene load_steps=22 format=3 uid="uid://c0bc7odo7li13"]
 
 [ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="1_i1u5c"]
-[ext_resource type="Texture2D" uid="uid://bgtsvvhk1evtx" path="res://assets/sprites/characters/captain-02/Captain_attack4.png" id="1_tsyxl"]
-[ext_resource type="Texture2D" uid="uid://ccxd3pm0cqerc" path="res://assets/sprites/characters/captain-02/Captain_sneer.png" id="2_i1u5c"]
-[ext_resource type="Texture2D" uid="uid://dtoivmhdi44j7" path="res://assets/sprites/characters/captain-02/Captain_idle.png" id="3_vkr8o"]
+[ext_resource type="Texture2D" uid="uid://bgtsvvhk1evtx" path="res://assets/sprites/characters/captain_02/Captain_attack4.png" id="1_tsyxl"]
+[ext_resource type="Texture2D" uid="uid://ccxd3pm0cqerc" path="res://assets/sprites/characters/captain_02/Captain_sneer.png" id="2_i1u5c"]
+[ext_resource type="Texture2D" uid="uid://dtoivmhdi44j7" path="res://assets/sprites/characters/captain_02/Captain_idle.png" id="3_vkr8o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jhyhp"]
 atlas = ExtResource("1_tsyxl")
@@ -131,6 +131,7 @@ size = Vector2(22, 8.5)
 scale = Vector2(2, 2)
 collision_layer = 4
 script = ExtResource("1_i1u5c")
+pirate_class = "captain"
 
 [node name="Pirate" type="AnimatedSprite2D" parent="."]
 position = Vector2(9, -24)
