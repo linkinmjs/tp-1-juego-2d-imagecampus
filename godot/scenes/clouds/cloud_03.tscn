@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdiol3re5ny7w"]
+
+[ext_resource type="Texture2D" uid="uid://bdh6v5f7d2v1g" path="res://assets/sprites/clouds_white/Shape3/cloud_shape3_1.png" id="1_tkmh2"]
+[ext_resource type="Script" uid="uid://cd1kn0atdlrqh" path="res://scripts/cloud.gd" id="1_wxv21"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wxv21"]
+radius = 58.0
+height = 160.004
+
+[node name="Cloud03" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_wxv21")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_tkmh2")
+
+[node name="CloudHitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CloudHitbox"]
+position = Vector2(0, 13)
+rotation = -1.57276
+shape = SubResource("CapsuleShape2D_wxv21")

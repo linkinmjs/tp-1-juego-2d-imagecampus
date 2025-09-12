@@ -9,6 +9,8 @@ size = Vector2(2703, 1326)
 collision_layer = 0
 collision_mask = 8
 script = ExtResource("1_1wr2l")
+quantity = 8
+min_speed = 150
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1341.5, 653)
@@ -16,7 +18,6 @@ shape = SubResource("RectangleShape2D_tble6")
 debug_color = Color(0.780392, 0.254902, 0.87451, 0.0235294)
 
 [node name="SpawnSingleEnemyTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 
 [node name="WaveIntervalTimer" type="Timer" parent="."]

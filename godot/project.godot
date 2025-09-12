@@ -64,8 +64,9 @@ action={
 
 2d_physics/layer_1="player"
 2d_physics/layer_2="ship"
-2d_physics/layer_3="collectibles"
-2d_physics/layer_4="enemies"
+2d_physics/layer_3="collectible"
+2d_physics/layer_4="enemie"
+2d_physics/layer_5="cannon_ball"
 
 [rendering]
 

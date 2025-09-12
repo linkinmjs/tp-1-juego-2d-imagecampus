@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://1w4d08nl5l5u"]
+
+[ext_resource type="Script" uid="uid://bn8rljf2h385m" path="res://scripts/cannon_ball.gd" id="1_tqdv6"]
+[ext_resource type="Texture2D" uid="uid://bwkcfqyvh6mnd" path="res://assets/sprites/characters/pirate_02/Cannonball2.png" id="2_jlhnd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hrhrm"]
+radius = 6.0
+
+[node name="CannonBall" type="RigidBody2D"]
+collision_mask = 0
+script = ExtResource("1_tqdv6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_jlhnd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hrhrm")

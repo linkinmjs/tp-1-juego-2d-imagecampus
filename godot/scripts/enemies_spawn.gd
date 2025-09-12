@@ -28,7 +28,6 @@ func _process(delta: float) -> void:
 		spawn_enemies()
 
 func spawn_enemies():
-	print("spawn!")
 	var spawn_side = spawn_sides.pick_random()
 	for i in range(quantity):
 		spawn_single_enemy_timer.start()
