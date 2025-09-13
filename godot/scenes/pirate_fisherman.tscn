@@ -1,0 +1,149 @@
+[gd_scene load_steps=22 format=3 uid="uid://cdwy3328a1tmu"]
+
+[ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="1_t1n03"]
+[ext_resource type="Texture2D" uid="uid://du8amn8cjw36o" path="res://assets/sprites/characters/fisherman/Fisherman_idle.png" id="1_tvcvu"]
+[ext_resource type="Texture2D" uid="uid://c8unw0xsx37pe" path="res://assets/sprites/characters/fisherman/Fisherman_fish.png" id="2_lrayg"]
+[ext_resource type="Texture2D" uid="uid://bfckgin4qvveo" path="res://assets/sprites/characters/fisherman/Fisherman_hook.png" id="3_cw8mp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2w1av"]
+atlas = ExtResource("2_lrayg")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cycsw"]
+atlas = ExtResource("2_lrayg")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gdoo"]
+atlas = ExtResource("2_lrayg")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k4k5o"]
+atlas = ExtResource("2_lrayg")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6u0t"]
+atlas = ExtResource("3_cw8mp")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8gkw"]
+atlas = ExtResource("3_cw8mp")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohuye"]
+atlas = ExtResource("3_cw8mp")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a8rb6"]
+atlas = ExtResource("3_cw8mp")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn56l"]
+atlas = ExtResource("3_cw8mp")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbc22"]
+atlas = ExtResource("3_cw8mp")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qiel"]
+atlas = ExtResource("1_tvcvu")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itrim"]
+atlas = ExtResource("1_tvcvu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bseor"]
+atlas = ExtResource("1_tvcvu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlr80"]
+atlas = ExtResource("1_tvcvu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03y04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2w1av")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cycsw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gdoo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k4k5o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b6u0t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8gkw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohuye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a8rb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn56l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbc22")
+}],
+"loop": false,
+"name": &"action",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qiel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itrim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bseor")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlr80")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tvcvu"]
+size = Vector2(18, 5.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1n03"]
+size = Vector2(24, 6.75)
+
+[node name="PirateFisherman" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_t1n03")
+pirate_class = "pirate_fisherman"
+
+[node name="Pirate" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(8, -24)
+sprite_frames = SubResource("SpriteFrames_03y04")
+animation = &"action"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -24.5)
+shape = SubResource("RectangleShape2D_tvcvu")
+
+[node name="ActionArea" type="Area2D" parent="."]
+position = Vector2(-1.5, -30.5)
+scale = Vector2(0.757233, 1.05322)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ActionArea"]
+shape = SubResource("RectangleShape2D_t1n03")
+debug_color = Color(0.2, 0.552941, 0.278431, 0.266667)

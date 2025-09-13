@@ -154,7 +154,8 @@ size = Vector2(24, 6.75)
 
 [node name="PirateCannon" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-collision_layer = 4
+collision_layer = 32
+collision_mask = 0
 script = ExtResource("1_us4qm")
 pirate_has_cannon = true
 pirate_class = "pirate_cannon"
@@ -163,7 +164,7 @@ pirate_class = "pirate_cannon"
 texture_filter = 1
 position = Vector2(30, -48)
 sprite_frames = SubResource("SpriteFrames_tddbd")
-animation = &"action"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

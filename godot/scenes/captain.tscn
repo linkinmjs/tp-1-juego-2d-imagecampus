@@ -129,7 +129,8 @@ size = Vector2(22, 8.5)
 
 [node name="Captain" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-collision_layer = 4
+collision_layer = 32
+collision_mask = 0
 script = ExtResource("1_i1u5c")
 pirate_class = "captain"
 

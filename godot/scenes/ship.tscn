@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://pv41slx65h2q"]
+[gd_scene load_steps=9 format=3 uid="uid://pv41slx65h2q"]
 
 [ext_resource type="PackedScene" uid="uid://c0bc7odo7li13" path="res://scenes/captain.tscn" id="1_2gnfn"]
 [ext_resource type="PackedScene" uid="uid://51p65lhgra6s" path="res://scenes/pirate_cannon.tscn" id="2_4tobq"]
 [ext_resource type="PackedScene" uid="uid://cmu88cf6l61gd" path="res://scenes/pirate_lookout.tscn" id="3_gudjc"]
 [ext_resource type="Texture2D" uid="uid://3tsbmokugw0e" path="res://assets/sprites/pirate_objects/Steering-wheel.png" id="3_tfsc7"]
+[ext_resource type="PackedScene" uid="uid://cdwy3328a1tmu" path="res://scenes/pirate_fisherman.tscn" id="4_7j21i"]
 [ext_resource type="Texture2D" uid="uid://blmwou8d86ih1" path="res://assets/sprites/pirate_objects/Ship_large.png" id="5_gudjc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7j21i"]
@@ -28,6 +29,10 @@ position = Vector2(-186, 196)
 [node name="PirateLookout" parent="Pirates" instance=ExtResource("3_gudjc")]
 z_index = 1
 position = Vector2(-275, -251)
+pirate_class = ""
+
+[node name="PirateFisherman" parent="Pirates" instance=ExtResource("4_7j21i")]
+position = Vector2(278, 121)
 
 [node name="Objects" type="Node2D" parent="."]
 

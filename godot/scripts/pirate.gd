@@ -5,7 +5,7 @@ var pirate: AnimatedSprite2D
 var cannon: AnimatedSprite2D
 var parrot_in_range: bool = false
 @export var pirate_has_cannon: bool = false
-@export_enum("captain", "pirate_cannon", "pirate_lookout") var pirate_class: String
+@export_enum("captain", "pirate_cannon", "pirate_lookout", "pirate_fisherman") var pirate_class: String
 
 
 func _ready() -> void:
@@ -27,6 +27,8 @@ func _on_action_area_body_entered(body: Node):
 		GameManager.parrot_on_pirate_cannon = true
 	elif pirate_class == "pirate_lookout":
 		GameManager.parrot_on_pirate_lookout = true
+	elif pirate_class == "pirate_fisherman":
+		GameManager.parrot_on_pirate_lookout = true
 	
 func _on_action_area_body_exited(body: Node):
 	parrot_in_range = false
@@ -35,6 +37,8 @@ func _on_action_area_body_exited(body: Node):
 	elif pirate_class == "pirate_cannon":
 		GameManager.parrot_on_pirate_cannon = false
 	elif pirate_class == "pirate_lookout":
+		GameManager.parrot_on_pirate_lookout = false
+	elif pirate_class == "pirate_fisherman":
 		GameManager.parrot_on_pirate_lookout = false
 	print("parrot leaving pirate")
 
