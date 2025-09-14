@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1xtcop22ap8l"]
+
+[ext_resource type="Texture2D" uid="uid://bm5x5ymdl2iex" path="res://assets/sprites/Island.png" id="1_2v8eh"]
+
+[node name="Island" type="PathFollow2D"]
+rotation = -3.13337
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+rotation = 3.13337
+texture = ExtResource("1_2v8eh")
