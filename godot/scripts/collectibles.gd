@@ -19,7 +19,5 @@ func _ready() -> void:
 		animated_sprite_2d.play("idle_star")
 
 func _process(delta: float) -> void:
-	
 	if sleeping and not animation_player.is_playing():
-		print("animation playing")
 		animation_player.play("idle")
