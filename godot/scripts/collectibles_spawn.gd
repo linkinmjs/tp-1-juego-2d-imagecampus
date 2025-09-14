@@ -1,11 +1,12 @@
 extends Area2D
-
+@export var spawn_wait_time: float = 5
 @export var collectible_scene: PackedScene
 @onready var spawn_timer: Timer = $SpawnTimer
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 
 func _ready() -> void:
 	spawn_timer.connect("timeout", _on_spawn_timer_timeout)
+	spawn_timer.wait_time = spawn_wait_time
 
 func _on_spawn_timer_timeout() -> void:
 	spawn_collectible()
@@ -13,10 +14,12 @@ func _on_spawn_timer_timeout() -> void:
 	pass
 
 func spawn_collectible() -> void:
-	var collectible: RigidBody2D = collectible_scene.instantiate()
+	var collectible: Collectible = collectible_scene.instantiate()
 	collectible.global_position = get_random_position_in_shape()
+	collectible.collectible_type = GameManager.COLLECTIBLES_TYPES.pick_random()
+	print(collectible.collectible_type)
 	add_child(collectible)
-	
+
 func get_random_position_in_shape() -> Vector2:
 	var circle_shape: CircleShape2D = $CollisionShape2D.shape
 	var radius = circle_shape.radius
@@ -34,3 +37,4 @@ func random_point_in_ellipse(rx: float, ry: float) -> Vector2:
 	var x = r * cos(angle) * rx
 	var y = r * sin(angle) * ry
 	return Vector2(x, y)
+	

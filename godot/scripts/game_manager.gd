@@ -9,16 +9,15 @@ var parrot_on_pirate_cannon = false
 var parrot_on_pirate_lookout = false
 var parrot_on_captain = false
 
-const COIN: String = "coin"
-const CANNON_BALL: String = "cannon_ball"
-const STAR: String = "star"
+const COLLECTIBLES_TYPES = ["coin", "cannon_ball", "star"]
 
 func get_collectible(type: String, amount: int):
-	if type == COIN:
+	# Coin
+	if type == COLLECTIBLES_TYPES[0]:
 		collected_coins += collected_coins + amount
-	elif type == CANNON_BALL:
+	#Cannon Ball
+	elif type == COLLECTIBLES_TYPES[1]:
 		collected_cannon_balls += collected_cannon_balls + amount
 
 func get_damage(damage: int):
-	print("recibe daño!")
 	life = life - damage

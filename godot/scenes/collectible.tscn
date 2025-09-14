@@ -136,7 +136,6 @@ gravity_scale = 0.3
 sleeping = true
 lock_rotation = true
 script = ExtResource("2_i64fm")
-collectible_type = "coin"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, -1)
