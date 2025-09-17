@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgyqnrgvdgkkk"]
+
+[ext_resource type="Script" uid="uid://dwo5gosbtcqlx" path="res://scripts/question_mark.gd" id="1_0infq"]
+[ext_resource type="Texture2D" uid="uid://bv5s16p0yjamd" path="res://assets/sprites/icons/Icons_40.png" id="1_ne3or"]
+
+[node name="QuestionMark" type="PathFollow2D"]
+rotates = false
+script = ExtResource("1_0infq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_ne3or")

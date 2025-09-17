@@ -17,6 +17,8 @@ texture_filter = 1
 texture = ExtResource("1_ctmvx")
 
 [node name="CloudHitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CloudHitbox"]
 position = Vector2(-18, 6)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ct1u0q27xnh8k"]
 
-[ext_resource type="Script" path="res://scripts/top_scene.gd" id="1_sfoov"]
+[ext_resource type="Script" uid="uid://cwrglxmw1h45w" path="res://scripts/top_scene.gd" id="1_sfoov"]
 [ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_e7hqm"]
 [ext_resource type="Texture2D" uid="uid://dc6rwhh8po2v3" path="res://assets/sprites/pirate_objects/Ship.png" id="2_lxc7h"]
 [ext_resource type="PackedScene" uid="uid://7d0nx5p5ko78" path="res://scenes/clouds/cloud_spawn.tscn" id="3_lxc7h"]
