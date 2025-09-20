@@ -13,7 +13,6 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_sea_revealed() -> void:
-	print("_on_sea_revealed llamado")
 	reveal_random_event()
 
 func reveal_random_event() -> void:
@@ -22,4 +21,3 @@ func reveal_random_event() -> void:
 	add_sibling(event_scene)
 	event_scene.progress_ratio = progress_ratio
 	queue_free()
-	

@@ -27,5 +27,4 @@ func get_damage(damage: int):
 	life = life - damage
 	
 func reveal_sea() -> void:
-	print("reveal_sea del gameManager calleado")
 	emit_signal("sea_revealed")

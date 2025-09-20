@@ -13,7 +13,6 @@ var parrot_in_range: bool = false
 @export_enum(CAPTAIN, PIRATE_CANNON, PIRATE_LOOKOUT, PIRATE_FISHERMAN) var pirate_class: String
 
 func _ready() -> void:
-	print(pirate_class)
 	pirate = get_node("Pirate")
 	if pirate_class == PIRATE_CANNON:
 		cannon = get_node("Cannon")
@@ -54,7 +53,6 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _action_event():
 	pirate.play("action")
-	print(pirate_class)
 	if pirate_class == PIRATE_CANNON:
 		cannon.play("action")
 	if pirate_class == PIRATE_LOOKOUT:
