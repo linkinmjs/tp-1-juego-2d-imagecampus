@@ -13,6 +13,7 @@ var parrot_in_range: bool = false
 @export_enum(CAPTAIN, PIRATE_CANNON, PIRATE_LOOKOUT, PIRATE_FISHERMAN) var pirate_class: String
 
 func _ready() -> void:
+	print(pirate_class)
 	pirate = get_node("Pirate")
 	if pirate_class == PIRATE_CANNON:
 		cannon = get_node("Cannon")
@@ -33,8 +34,8 @@ func _on_action_area_body_entered(body: Node):
 	elif pirate_class == PIRATE_LOOKOUT:
 		GameManager.parrot_on_pirate_lookout = true
 	elif pirate_class == PIRATE_FISHERMAN:
-		GameManager.parrot_on_pirate_lookout = true
-	
+		GameManager.parrot_on_pirate_fisherman = true
+
 func _on_action_area_body_exited(body: Node):
 	parrot_in_range = false
 	if pirate_class == CAPTAIN:
@@ -44,7 +45,7 @@ func _on_action_area_body_exited(body: Node):
 	elif pirate_class == PIRATE_LOOKOUT:
 		GameManager.parrot_on_pirate_lookout = false
 	elif pirate_class == PIRATE_FISHERMAN:
-		GameManager.parrot_on_pirate_lookout = false
+		GameManager.parrot_on_pirate_fisherman = false
 
 func _unhandled_input(event: InputEvent) -> void:
 	## TODO: evitar solapamiento de acciones
@@ -53,11 +54,11 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _action_event():
 	pirate.play("action")
-	if pirate_has_cannon:
+	print(pirate_class)
+	if pirate_class == PIRATE_CANNON:
 		cannon.play("action")
 	if pirate_class == PIRATE_LOOKOUT:
-		#TODO: call global signal from here
-		pass
+		GameManager.reveal_sea()
 
 func update_animation():
 	if pirate.animation == "action" and pirate.is_playing():

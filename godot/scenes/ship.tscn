@@ -29,7 +29,6 @@ position = Vector2(-186, 196)
 [node name="PirateLookout" parent="Pirates" instance=ExtResource("3_gudjc")]
 z_index = 1
 position = Vector2(-275, -251)
-pirate_class = ""
 
 [node name="PirateFisherman" parent="Pirates" instance=ExtResource("4_7j21i")]
 position = Vector2(278, 121)

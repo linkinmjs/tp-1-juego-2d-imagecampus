@@ -10,6 +10,7 @@ var collected_cannon_balls: int = 10
 var parrot_on_pirate_cannon = false
 var parrot_on_pirate_lookout = false
 var parrot_on_captain = false
+var parrot_on_pirate_fisherman = false
 
 const COLLECTIBLES_TYPES = ["coin", "cannon_ball", "star"]
 const PIRATES_TYPES = ["captain", "pirate_cannon", "pirate_lookout", "pirate_fisherman"]
@@ -26,4 +27,5 @@ func get_damage(damage: int):
 	life = life - damage
 	
 func reveal_sea() -> void:
+	print("reveal_sea del gameManager calleado")
 	emit_signal("sea_revealed")

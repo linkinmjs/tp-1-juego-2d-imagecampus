@@ -17,7 +17,6 @@ func spawn_collectible() -> void:
 	var collectible: Collectible = collectible_scene.instantiate()
 	collectible.global_position = get_random_position_in_shape()
 	collectible.collectible_type = GameManager.COLLECTIBLES_TYPES.pick_random()
-	print(collectible.collectible_type)
 	add_child(collectible)
 
 func get_random_position_in_shape() -> Vector2:

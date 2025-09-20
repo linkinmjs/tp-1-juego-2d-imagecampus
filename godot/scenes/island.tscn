@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1xtcop22ap8l"]
 
 [ext_resource type="Texture2D" uid="uid://bm5x5ymdl2iex" path="res://assets/sprites/Island.png" id="1_2v8eh"]
-[ext_resource type="Script" uid="uid://bcbs6p4xtd7tn" path="res://scenes/island.gd" id="1_g61je"]
+[ext_resource type="Script" path="res://scenes/island.gd" id="1_g61je"]
 
 [node name="Island" type="PathFollow2D"]
 rotation = -3.13337
