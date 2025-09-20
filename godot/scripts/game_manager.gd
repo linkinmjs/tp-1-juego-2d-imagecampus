@@ -1,5 +1,7 @@
 extends Node
 
+signal sea_revealed
+
 var life: int = 3
 var collected_coins: int = 0
 var collected_cannon_balls: int = 10
@@ -10,6 +12,7 @@ var parrot_on_pirate_lookout = false
 var parrot_on_captain = false
 
 const COLLECTIBLES_TYPES = ["coin", "cannon_ball", "star"]
+const PIRATES_TYPES = ["captain", "pirate_cannon", "pirate_lookout", "pirate_fisherman"]
 
 func get_collectible(type: String, amount: int):
 	# Coin
@@ -21,3 +24,6 @@ func get_collectible(type: String, amount: int):
 
 func get_damage(damage: int):
 	life = life - damage
+	
+func reveal_sea() -> void:
+	emit_signal("sea_revealed")

@@ -5,7 +5,6 @@ extends Node2D
 @onready var shoot_delay: Timer = $ShootDelay
 @onready var shoot_animation: CPUParticles2D = $Ship/CannonPosition/ShootAnimation
 
-
 func _process(delta: float) -> void:
 	# TODO replace next hardcode
 	if Input.is_action_just_pressed("action") and GameManager.parrot_on_pirate_cannon:
