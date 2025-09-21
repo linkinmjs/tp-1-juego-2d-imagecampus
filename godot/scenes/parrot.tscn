@@ -152,4 +152,8 @@ position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_nuuxd")
 debug_color = Color(0.646417, 0.247677, 0.231455, 0.42)
 
+[node name="HitTimer" type="Timer" parent="Hitbox"]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
