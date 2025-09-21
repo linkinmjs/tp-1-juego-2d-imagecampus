@@ -1,6 +1,7 @@
 extends Node
 
 signal sea_revealed
+signal player_hitted
 
 var life: int = 3
 var collected_coins: int = 0
@@ -24,7 +25,7 @@ func get_collectible(type: String, amount: int):
 		collected_cannon_balls += collected_cannon_balls + amount
 
 func get_damage(damage: int):
-	life = life - damage
+	life -= damage
 	
 func reveal_sea() -> void:
 	emit_signal("sea_revealed")

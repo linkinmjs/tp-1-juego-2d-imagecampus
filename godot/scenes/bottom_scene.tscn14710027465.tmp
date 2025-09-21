@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwtlwto8dapiv"]
+[gd_scene load_steps=13 format=3 uid="uid://dwtlwto8dapiv"]
 
 [ext_resource type="Script" uid="uid://dsliubugmiwpq" path="res://scripts/bottom_scene.gd" id="1_7ymyq"]
 [ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_jtje2"]
@@ -20,10 +20,6 @@ size = Vector2(70, 1400)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8umi"]
 size = Vector2(70, 1400)
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7ymyq"]
-noise_type = 3
-frequency = 0.5
 
 [node name="BottomScene" type="Node2D"]
 script = ExtResource("1_7ymyq")
@@ -78,4 +74,3 @@ shape = SubResource("RectangleShape2D_t8umi")
 [node name="Shaker" type="Node2D" parent="." node_paths=PackedStringArray("camera")]
 script = ExtResource("8_7ymyq")
 camera = NodePath("../Parrot/Camera2D")
-noise = SubResource("FastNoiseLite_7ymyq")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cytkirwfvful"]
+[gd_scene load_steps=4 format=3 uid="uid://cytkirwfvful"]
 
 [ext_resource type="PackedScene" uid="uid://ct1u0q27xnh8k" path="res://scenes/top_scene.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dwtlwto8dapiv" path="res://scenes/bottom_scene.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://dvx0llb6yf42k" path="res://scenes/game_ui.tscn" id="1_sugp2"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -19,6 +20,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="UI" parent="VBoxContainer" instance=ExtResource("1_sugp2")]
+layout_mode = 2
+
 [node name="TopView" type="SubViewportContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -28,7 +32,7 @@ stretch = true
 disable_3d = true
 handle_input_locally = false
 gui_disable_input = true
-size = Vector2i(2, 2)
+size = Vector2i(1152, 205)
 render_target_update_mode = 4
 
 [node name="TopScene" parent="VBoxContainer/TopView/TopVP" instance=ExtResource("1_0wfyh")]
@@ -42,7 +46,7 @@ stretch = true
 [node name="BottomVP" type="SubViewport" parent="VBoxContainer/BottomView"]
 disable_3d = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1152, 412)
 render_target_update_mode = 4
 
 [node name="BottomScene" parent="VBoxContainer/BottomView/BottomVP" instance=ExtResource("1_o5qli")]

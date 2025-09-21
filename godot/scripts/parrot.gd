@@ -14,7 +14,6 @@ var knockback_velocity_y: float = -440.0
 func _physics_process(delta: float) -> void:
 	
 	if was_hit:
-		#print(hit_timer.time_left)
 		velocity += get_gravity() * delta
 		move_and_slide()
 		return
@@ -57,18 +56,21 @@ func update_animation():
 func is_hitted() -> void:
 	await hit_timer.timeout
 	was_hit = false
-	print("func is_hitted()")
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if !was_hit:
+		was_hit = true
+		
 		if Input.is_action_pressed("left"):
 			knockback_velocity_x = abs(knockback_velocity_x)
+			velocity = Vector2(knockback_velocity_x, knockback_velocity_y)
 		elif Input.is_action_pressed("right"):
 			knockback_velocity_x = -abs(knockback_velocity_x)
+			velocity = Vector2(knockback_velocity_x, knockback_velocity_y)
 		else:
-			knockback_velocity_x = 0.0
-		velocity = Vector2(knockback_velocity_x, knockback_velocity_y)
-		was_hit = true
+			velocity = Vector2(0.0, knockback_velocity_y)
+		
+		GameManager.player_hitted.emit()
 		hit_timer.start()
 		is_hitted()
 		GameManager.get_damage(1)

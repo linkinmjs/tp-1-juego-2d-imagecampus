@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvx0llb6yf42k"]
+
+[ext_resource type="Script" uid="uid://ckvqnl5cxbyon" path="res://scripts/game_ui.gd" id="1_yubou"]
+
+[node name="MarginContainer" type="MarginContainer"]
+script = ExtResource("1_yubou")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Ammo: 0"
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Health: 100"
+
+[node name="Label3" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Score: 0"
