@@ -79,3 +79,6 @@ shape = SubResource("RectangleShape2D_t8umi")
 script = ExtResource("8_7ymyq")
 camera = NodePath("../Parrot/Camera2D")
 noise = SubResource("FastNoiseLite_7ymyq")
+intensity = 80.0
+max_intensity = 150.0
+frequency = 5.0
