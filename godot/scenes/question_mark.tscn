@@ -67,6 +67,7 @@ _data = {
 
 [node name="QuestionMark" type="PathFollow2D"]
 rotates = false
+loop = false
 script = ExtResource("1_0infq")
 events = Array[PackedScene]([ExtResource("2_6sfaj")])
 

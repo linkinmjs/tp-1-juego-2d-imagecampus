@@ -1,22 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvx0llb6yf42k"]
+[gd_scene load_steps=5 format=3 uid="uid://dvx0llb6yf42k"]
 
 [ext_resource type="Script" uid="uid://ckvqnl5cxbyon" path="res://scripts/game_ui.gd" id="1_yubou"]
+[ext_resource type="LabelSettings" uid="uid://isj7rel6ighb" path="res://game_ui_label.tres" id="2_rns2u"]
+[ext_resource type="Texture2D" uid="uid://buxerrvhlxcci" path="res://assets/UI/frames/Portrait_frame.png" id="2_u001w"]
 
-[node name="MarginContainer" type="MarginContainer"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_u2dgd"]
+texture = ExtResource("2_u001w")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0
+
+[node name="MarginContainer" type="CanvasLayer"]
 script = ExtResource("1_yubou")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 43.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_u2dgd")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 180
 alignment = 1
 
-[node name="Label" type="Label" parent="HBoxContainer"]
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Ammo: 0"
+label_settings = ExtResource("2_rns2u")
 
-[node name="Label2" type="Label" parent="HBoxContainer"]
+[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Health: 100"
+label_settings = ExtResource("2_rns2u")
 
-[node name="Label3" type="Label" parent="HBoxContainer"]
+[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Score: 0"
+label_settings = ExtResource("2_rns2u")

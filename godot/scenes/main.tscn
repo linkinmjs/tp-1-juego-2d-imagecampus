@@ -12,6 +12,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="MarginContainer" parent="." instance=ExtResource("1_sugp2")]
+follow_viewport_enabled = true
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -19,9 +22,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="UI" parent="VBoxContainer" instance=ExtResource("1_sugp2")]
-layout_mode = 2
 
 [node name="TopView" type="SubViewportContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -32,7 +32,7 @@ stretch = true
 disable_3d = true
 handle_input_locally = false
 gui_disable_input = true
-size = Vector2i(1152, 205)
+size = Vector2i(1152, 214)
 render_target_update_mode = 4
 
 [node name="TopScene" parent="VBoxContainer/TopView/TopVP" instance=ExtResource("1_0wfyh")]
@@ -46,7 +46,7 @@ stretch = true
 [node name="BottomVP" type="SubViewport" parent="VBoxContainer/BottomView"]
 disable_3d = true
 handle_input_locally = false
-size = Vector2i(1152, 412)
+size = Vector2i(1152, 430)
 render_target_update_mode = 4
 
 [node name="BottomScene" parent="VBoxContainer/BottomView/BottomVP" instance=ExtResource("1_o5qli")]

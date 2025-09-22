@@ -6,6 +6,7 @@
 [node name="Island" type="PathFollow2D"]
 rotation = -3.13337
 rotates = false
+loop = false
 script = ExtResource("1_g61je")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
