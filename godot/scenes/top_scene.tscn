@@ -22,7 +22,7 @@ script = ExtResource("1_sfoov")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
-limit_top = 432
+limit_top = 414
 
 [node name="Ship" type="Sprite2D" parent="."]
 texture_filter = 1

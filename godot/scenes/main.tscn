@@ -26,13 +26,14 @@ grow_vertical = 2
 [node name="TopView" type="SubViewportContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
 stretch = true
 
 [node name="TopVP" type="SubViewport" parent="VBoxContainer/TopView"]
 disable_3d = true
 handle_input_locally = false
 gui_disable_input = true
-size = Vector2i(1152, 214)
+size = Vector2i(1152, 199)
 render_target_update_mode = 4
 
 [node name="TopScene" parent="VBoxContainer/TopView/TopVP" instance=ExtResource("1_0wfyh")]
@@ -46,7 +47,7 @@ stretch = true
 [node name="BottomVP" type="SubViewport" parent="VBoxContainer/BottomView"]
 disable_3d = true
 handle_input_locally = false
-size = Vector2i(1152, 430)
+size = Vector2i(1152, 445)
 render_target_update_mode = 4
 
 [node name="BottomScene" parent="VBoxContainer/BottomView/BottomVP" instance=ExtResource("1_o5qli")]
