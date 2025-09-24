@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://d1xtcop22ap8l"]
+[gd_scene load_steps=4 format=3 uid="uid://d1xtcop22ap8l"]
 
 [ext_resource type="Texture2D" uid="uid://bm5x5ymdl2iex" path="res://assets/sprites/Island.png" id="1_2v8eh"]
-[ext_resource type="Script" uid="uid://bcbs6p4xtd7tn" path="res://scenes/island.gd" id="1_g61je"]
+[ext_resource type="Script" uid="uid://bcbs6p4xtd7tn" path="res://scripts/island.gd" id="1_g61je"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g61je"]
+size = Vector2(242.404, 138.745)
 
 [node name="Island" type="PathFollow2D"]
 rotation = -3.13337
@@ -13,3 +16,11 @@ script = ExtResource("1_g61je")
 texture_filter = 1
 rotation = 3.13337
 texture = ExtResource("1_2v8eh")
+
+[node name="IslandArea" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IslandArea"]
+position = Vector2(-1.29225, -7.36336)
+shape = SubResource("RectangleShape2D_g61je")

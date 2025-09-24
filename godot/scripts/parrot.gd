@@ -57,7 +57,7 @@ func is_hitted() -> void:
 	await hit_timer.timeout
 	was_hit = false
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
+func _on_hitbox_area_entered(_area: Area2D) -> void:
 	if !was_hit:
 		was_hit = true
 		

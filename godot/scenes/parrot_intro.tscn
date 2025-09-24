@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dj2fxiej2qymr"]
+[gd_scene load_steps=18 format=3 uid="uid://c052fq12hu1bf"]
 
 [ext_resource type="Texture2D" uid="uid://rlr5388qd8or" path="res://assets/sprites/characters/parrot/parrot_main_menu.png" id="1_d74bp"]
-[ext_resource type="Script" uid="uid://g3ft6yv813vn" path="res://scripts/parrot_intro.gd" id="2_ibrnv"]
+[ext_resource type="Script" path="res://scripts/parrot_intro.gd" id="2_ibrnv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ibrnv"]
 atlas = ExtResource("1_d74bp")
@@ -128,7 +128,7 @@ animations = [{
 texture_filter = 1
 position = Vector2(581, 584)
 sprite_frames = SubResource("SpriteFrames_2y81v")
-animation = &"turn_right"
+animation = &"idle_right"
 autoplay = "idle_left"
 offset = Vector2(3, -25)
 script = ExtResource("2_ibrnv")

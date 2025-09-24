@@ -19,10 +19,10 @@ func _ready() -> void:
 	elif collectible_type == STAR:
 		animated_sprite_2d.play("idle_star")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if sleeping and not animation_player.is_playing():
 		animation_player.play("idle")
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	GameManager.get_collectible(collectible_type, amount)
 	queue_free()

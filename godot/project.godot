@@ -73,6 +73,8 @@ toggle_debug={
 2d_physics/layer_4="enemie"
 2d_physics/layer_5="cannon_ball"
 2d_physics/layer_6="pirate"
+2d_physics/layer_7="cloud"
+2d_physics/layer_8="island"
 
 [rendering]
 

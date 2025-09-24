@@ -4,8 +4,12 @@ extends Node2D
 @onready var cannon_ball_scene = preload("res://scenes/cannon_ball.tscn")
 @onready var shoot_delay: Timer = $ShootDelay
 @onready var shoot_animation: CPUParticles2D = $Ship/CannonPosition/ShootAnimation
+@onready var ship_area_2d: Area2D = $Ship/Area2D
 
-func _process(delta: float) -> void:
+func _ready() -> void:
+	ship_area_2d.area_entered.connect(_on_area_entered)
+
+func _process(_delta: float) -> void:
 	# TODO replace next hardcode
 	if Input.is_action_just_pressed("action") and GameManager.parrot_on_pirate_cannon:
 		shoot()
@@ -17,3 +21,8 @@ func shoot() -> void:
 	cannon_ball.global_position = cannon_position.global_position
 	shoot_animation.restart()
 	add_child(cannon_ball)
+
+# TODO: continue from here
+func _on_area_entered(area: Area2D) -> void:
+	
+	print(area.name)
