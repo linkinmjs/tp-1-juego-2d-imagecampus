@@ -1,0 +1,134 @@
+[gd_scene load_steps=18 format=3 uid="uid://dj2fxiej2qymr"]
+
+[ext_resource type="Texture2D" uid="uid://rlr5388qd8or" path="res://assets/sprites/characters/parrot/parrot_main_menu.png" id="1_d74bp"]
+[ext_resource type="Script" uid="uid://g3ft6yv813vn" path="res://scripts/parrot_intro.gd" id="2_ibrnv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ibrnv"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(0, 192, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoxrf"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(80, 192, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7k3m6"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(160, 192, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jknf6"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(240, 192, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d74bp"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(0, 96, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y81v"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(80, 96, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8dnjj"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(160, 96, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_if821"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(240, 96, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puxmk"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(240, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4trpg"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(80, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gld2m"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(0, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu3ka"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(0, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ix5qu"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(160, 0, 80, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xmc73"]
+atlas = ExtResource("1_d74bp")
+region = Rect2(240, 0, 80, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2y81v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ibrnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qoxrf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7k3m6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jknf6")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d74bp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2y81v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8dnjj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_if821")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puxmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4trpg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gld2m")
+}],
+"loop": false,
+"name": &"turn_left",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu3ka")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ix5qu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xmc73")
+}],
+"loop": false,
+"name": &"turn_right",
+"speed": 20.0
+}]
+
+[node name="ParrotIntro" type="AnimatedSprite2D"]
+texture_filter = 1
+position = Vector2(581, 584)
+sprite_frames = SubResource("SpriteFrames_2y81v")
+animation = &"turn_right"
+autoplay = "idle_left"
+offset = Vector2(3, -25)
+script = ExtResource("2_ibrnv")
