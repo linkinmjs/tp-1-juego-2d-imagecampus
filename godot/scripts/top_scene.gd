@@ -8,6 +8,7 @@ extends Node2D
 
 func _ready() -> void:
 	ship_area_2d.area_entered.connect(_on_area_entered)
+	ship_area_2d.area_exited.connect(_on_area_exited)
 
 func _process(_delta: float) -> void:
 	# TODO replace next hardcode
@@ -24,5 +25,13 @@ func shoot() -> void:
 
 # TODO: continue from here
 func _on_area_entered(area: Area2D) -> void:
-	
-	print(area.name)
+	if area.name == "CloudArea":
+		GameManager.ship_colliding_clouds = true
+	if area.name == "IslandArea":
+		GameManager.ship_colliding_island = true
+
+func _on_area_exited(area: Area2D) -> void:
+	if area.name == "CloudArea":
+		GameManager.ship_colliding_clouds = false
+	if area.name == "IslandArea":
+		GameManager.ship_colliding_island = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dwtlwto8dapiv"]
+[gd_scene load_steps=19 format=3 uid="uid://dwtlwto8dapiv"]
 
 [ext_resource type="Script" uid="uid://dsliubugmiwpq" path="res://scripts/bottom_scene.gd" id="1_7ymyq"]
 [ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_jtje2"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d0h3o5yaj5ufk" path="res://scenes/enemies_spawn.tscn" id="6_uyn6v"]
 [ext_resource type="PackedScene" uid="uid://bt6ej2icbaj5w" path="res://scenes/parrot.tscn" id="7_uyn6v"]
 [ext_resource type="Script" uid="uid://bvcjm3lyhcrlq" path="res://scripts/shaker.gd" id="8_7ymyq"]
+[ext_resource type="Texture2D" uid="uid://cjr0gprqqyes6" path="res://assets/sprites/clouds_white/Shape2/cloud_shape2_1.png" id="9_gti6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyn6v"]
 size = Vector2(2860, 75)
@@ -24,6 +25,15 @@ size = Vector2(70, 1400)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_7ymyq"]
 noise_type = 3
 frequency = 0.5
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gti6a"]
+
+[sub_resource type="Gradient" id="Gradient_gti6a"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_t8umi"]
+gradient = SubResource("Gradient_gti6a")
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vt6qn"]
 
 [node name="BottomScene" type="Node2D"]
 script = ExtResource("1_7ymyq")
@@ -49,7 +59,7 @@ limit_bottom = 1296
 [node name="Spawn" parent="." instance=ExtResource("6_uyn6v")]
 
 [node name="Bird" parent="Spawn" instance=ExtResource("4_tble6")]
-position = Vector2(439, 426)
+position = Vector2(343, 464)
 
 [node name="CollectiblesSpawn" parent="." instance=ExtResource("4_uyn6v")]
 position = Vector2(1263, 630)
@@ -82,3 +92,27 @@ noise = SubResource("FastNoiseLite_7ymyq")
 intensity = 80.0
 max_intensity = 150.0
 frequency = 5.0
+
+[node name="CLOUD TESTS" type="Node2D" parent="."]
+visible = false
+
+[node name="Cloud" type="Sprite2D" parent="CLOUD TESTS"]
+visibility_layer = 4
+z_index = 2
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_gti6a")
+position = Vector2(1452, 821)
+scale = Vector2(13, 13)
+texture = ExtResource("9_gti6a")
+
+[node name="PointLight2D" type="PointLight2D" parent="CLOUD TESTS"]
+visibility_layer = 4
+position = Vector2(580, 730)
+blend_mode = 1
+texture = SubResource("GradientTexture2D_t8umi")
+
+[node name="PointLight2D2" type="PointLight2D" parent="CLOUD TESTS"]
+visibility_layer = 4
+material = SubResource("CanvasItemMaterial_vt6qn")
+position = Vector2(389, 1490)
+texture = ExtResource("9_gti6a")

@@ -67,6 +67,9 @@ toggle_debug={
 
 [layer_names]
 
+2d_render/layer_1="player"
+2d_render/layer_2="pirates"
+2d_render/layer_3="cloud"
 2d_physics/layer_1="player"
 2d_physics/layer_2="ship"
 2d_physics/layer_3="collectible"
