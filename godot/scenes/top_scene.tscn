@@ -71,6 +71,7 @@ transform = Transform2D(0.5, 0, 0, 0.5, 0, 324)
 
 [node name="CloudSpawn" parent="Clouds" instance=ExtResource("3_lxc7h")]
 unique_name_in_owner = true
+spawn_on_scene = "Top"
 
 [node name="ShootDelay" type="Timer" parent="."]
 one_shot = true

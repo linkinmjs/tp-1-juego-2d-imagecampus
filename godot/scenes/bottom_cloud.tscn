@@ -1,24 +1,70 @@
-[gd_scene load_steps=5 format=3 uid="uid://bcheeulj8hj3k"]
+[gd_scene load_steps=6 format=3 uid="uid://bcheeulj8hj3k"]
 
 [ext_resource type="Script" uid="uid://dtx8hak2uijij" path="res://scripts/bottom_cloud.gd" id="1_0vefp"]
-[ext_resource type="Texture2D" uid="uid://cjr0gprqqyes6" path="res://assets/sprites/clouds_white/Shape2/cloud_shape2_1.png" id="1_y0vcx"]
-[ext_resource type="Texture2D" uid="uid://cll5wn72b8snp" path="res://assets/sprites/clouds_white/Shape3/cloud_shape3_2.png" id="2_0vefp"]
-[ext_resource type="Texture2D" uid="uid://bdh6v5f7d2v1g" path="res://assets/sprites/clouds_white/Shape3/cloud_shape3_1.png" id="3_7jkeu"]
+[ext_resource type="Texture2D" uid="uid://dkj41mmim3ew" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_1.png" id="2_h1hg6"]
+[ext_resource type="Texture2D" uid="uid://b4e03c0lmtk35" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_5.png" id="4_pfpvd"]
+[ext_resource type="Texture2D" uid="uid://b6qckuyrj8k2k" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_4.png" id="5_etjii"]
+[ext_resource type="Texture2D" uid="uid://c3iogm1mlak3v" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_3.png" id="6_swo06"]
 
 [node name="BottomCloud" type="PathFollow2D"]
+rotates = false
 script = ExtResource("1_0vefp")
 
-[node name="CloudShape1" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(19, -14)
-texture = ExtResource("1_y0vcx")
+[node name="Clouds" type="Node2D" parent="."]
+position = Vector2(644, 0)
+scale = Vector2(5, 5)
 
-[node name="CloudShape2" type="Sprite2D" parent="."]
+[node name="CloudShape51" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-61, 14)
-texture = ExtResource("2_0vefp")
+position = Vector2(-69, -1.5)
+texture = ExtResource("2_h1hg6")
 
-[node name="CloudShape3" type="Sprite2D" parent="."]
+[node name="CloudShape55" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(70, 8)
-texture = ExtResource("3_7jkeu")
+position = Vector2(-75, 39)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape56" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-78, -31)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape54" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-118, 45)
+texture = ExtResource("5_etjii")
+
+[node name="CloudShape57" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-115, -11)
+texture = ExtResource("6_swo06")
+
+[node name="CloudShape58" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-139, -40.75)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape60" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-64.75, 10.25)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape62" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-4.25, -19.25)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape63" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-43.75, -10.75)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape64" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-20, 56.5)
+texture = ExtResource("4_pfpvd")
+
+[node name="CloudShape61" type="Sprite2D" parent="Clouds"]
+texture_filter = 1
+position = Vector2(-30.25, 16)
+texture = ExtResource("6_swo06")
