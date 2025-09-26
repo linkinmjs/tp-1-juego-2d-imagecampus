@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://bt6ej2icbaj5w"]
+[gd_scene load_steps=23 format=3 uid="uid://bt6ej2icbaj5w"]
 
 [ext_resource type="Texture2D" uid="uid://dduu5inmovyyl" path="res://assets/sprites/characters/parrot/Walk.png" id="1_i6g64"]
 [ext_resource type="Script" uid="uid://c43tt75pdq2e5" path="res://scripts/parrot.gd" id="1_vda7l"]
 [ext_resource type="Texture2D" uid="uid://dr1eu1u6avja0" path="res://assets/sprites/characters/parrot/Idle.png" id="2_vda7l"]
 [ext_resource type="Texture2D" uid="uid://csyx6wnk4yj1d" path="res://assets/sprites/characters/parrot/Special.png" id="3_nuuxd"]
+[ext_resource type="Texture2D" uid="uid://ja03wj67t8ky" path="res://assets/sprites/mask.png" id="5_nuuxd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ojfhj"]
 atlas = ExtResource("1_i6g64")
@@ -155,5 +156,10 @@ debug_color = Color(0.646417, 0.247677, 0.231455, 0.42)
 [node name="HitTimer" type="Timer" parent="Hitbox"]
 wait_time = 0.75
 one_shot = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visibility_layer = 4
+position = Vector2(0, -12)
+texture = ExtResource("5_nuuxd")
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

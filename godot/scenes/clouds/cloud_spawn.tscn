@@ -19,5 +19,5 @@ script = ExtResource("1_na5uw")
 clouds_scenes_to_spawn = Array[PackedScene]([ExtResource("2_urf7c"), ExtResource("3_f7e0t"), ExtResource("4_velyy"), ExtResource("5_5x1d5"), ExtResource("6_mqjgi")])
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.8
 autostart = true
