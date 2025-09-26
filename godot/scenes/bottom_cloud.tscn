@@ -9,10 +9,11 @@
 [node name="BottomCloud" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_0vefp")
+speed = 150.0
 
 [node name="Clouds" type="Node2D" parent="."]
 position = Vector2(644, 0)
-scale = Vector2(5, 5)
+scale = Vector2(6, 6)
 
 [node name="CloudShape51" type="Sprite2D" parent="Clouds"]
 texture_filter = 1

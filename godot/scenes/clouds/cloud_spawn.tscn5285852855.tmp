@@ -1,0 +1,22 @@
+[gd_scene load_steps=8 format=3 uid="uid://7d0nx5p5ko78"]
+
+[ext_resource type="Script" uid="uid://1ospq4gr0mso" path="res://scripts/cloud_spawn.gd" id="1_na5uw"]
+[ext_resource type="PackedScene" uid="uid://canm5p62wqvpu" path="res://scenes/clouds/cloud_01.tscn" id="2_urf7c"]
+[ext_resource type="PackedScene" uid="uid://15pciqtewk8y" path="res://scenes/clouds/cloud_02.tscn" id="3_f7e0t"]
+[ext_resource type="PackedScene" uid="uid://cdiol3re5ny7w" path="res://scenes/clouds/cloud_03.tscn" id="4_velyy"]
+[ext_resource type="PackedScene" uid="uid://bp3q8tgmvf8n7" path="res://scenes/clouds/cloud_04.tscn" id="5_5x1d5"]
+[ext_resource type="PackedScene" uid="uid://cnkool402j7k7" path="res://scenes/clouds/cloud_05.tscn" id="6_mqjgi"]
+
+[sub_resource type="Curve2D" id="Curve2D_rw4lg"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1404, 568, 0, 0, 0, 0, 1039, 565, 0, 0, 0, 0, 878, 563, 0, 0, 0, 0, 735, 564, 0, 0, 0, 0, 650, 563, 0, 0, 0, 0, 555, 559, 0, 0, 0, 0, 480, 561, 0, 0, 0, 0, 378, 567, 0, 0, 0, 0, 274, 567, 0, 0, 0, 0, 172, 565, 0, 0, 0, 0, -9, 568, 0, 0, 0, 0, -171, 564)
+}
+point_count = 12
+
+[node name="CloudSpawn" type="Path2D"]
+curve = SubResource("Curve2D_rw4lg")
+script = ExtResource("1_na5uw")
+clouds_scenes_to_spawn = Array[PackedScene]([ExtResource("2_urf7c"), ExtResource("3_f7e0t"), ExtResource("4_velyy"), ExtResource("5_5x1d5"), ExtResource("6_mqjgi")])
+
+[node name="SpawnTimer" type="Timer" parent="."]
+autostart = true

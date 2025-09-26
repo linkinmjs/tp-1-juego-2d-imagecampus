@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	if progress_ratio >= 1.0:
 		queue_free()
 
-func _on_cloud_area_body_entered(_area):
+func _on_cloud_area_body_entered(_area) -> void:
 	if randf() < spawn_probability:
 		var question_mark: PathFollow2D = QUESTION_MARK.instantiate()
 		add_sibling(question_mark)

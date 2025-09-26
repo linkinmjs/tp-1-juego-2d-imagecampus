@@ -21,7 +21,7 @@ var right_limit_spawn: int = abs(2900)
 func _ready() -> void:
 	pass
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if horde_interval_timer.is_stopped():
 		horde_interval_timer.start()
 		await horde_interval_timer.timeout

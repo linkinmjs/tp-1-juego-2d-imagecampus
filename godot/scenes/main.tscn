@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ct1u0q27xnh8k" path="res://scenes/top_scene.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://dwtlwto8dapiv" path="res://scenes/bottom_scene.tscn" id="1_o5qli"]
-[ext_resource type="PackedScene" uid="uid://dvx0llb6yf42k" path="res://scenes/game_ui.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" path="res://scenes/game_ui.tscn" id="1_sugp2"]
 
 [node name="Root" type="Control"]
 layout_mode = 3
@@ -33,10 +33,11 @@ stretch = true
 disable_3d = true
 handle_input_locally = false
 gui_disable_input = true
-size = Vector2i(2, 2)
+size = Vector2i(1152, 199)
 render_target_update_mode = 4
 
 [node name="TopScene" parent="VBoxContainer/TopView/TopVP" instance=ExtResource("1_0wfyh")]
+unique_name_in_owner = true
 
 [node name="BottomView" type="SubViewportContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -47,7 +48,8 @@ stretch = true
 [node name="BottomVP" type="SubViewport" parent="VBoxContainer/BottomView"]
 disable_3d = true
 handle_input_locally = false
-size = Vector2i(2, 2)
+size = Vector2i(1152, 445)
 render_target_update_mode = 4
 
 [node name="BottomScene" parent="VBoxContainer/BottomView/BottomVP" instance=ExtResource("1_o5qli")]
+unique_name_in_owner = true

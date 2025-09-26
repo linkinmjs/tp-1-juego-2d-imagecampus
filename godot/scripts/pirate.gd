@@ -21,10 +21,10 @@ func _ready() -> void:
 	action_area.body_entered.connect(_on_action_area_body_entered)
 	action_area.body_exited.connect(_on_action_area_body_exited)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_animation()
 
-func _on_action_area_body_entered(body: Node):
+func _on_action_area_body_entered(_body: Node):
 	parrot_in_range = true
 	if pirate_class == CAPTAIN:
 		GameManager.parrot_on_captain = true
@@ -35,7 +35,7 @@ func _on_action_area_body_entered(body: Node):
 	elif pirate_class == PIRATE_FISHERMAN:
 		GameManager.parrot_on_pirate_fisherman = true
 
-func _on_action_area_body_exited(body: Node):
+func _on_action_area_body_exited(_body: Node):
 	parrot_in_range = false
 	if pirate_class == CAPTAIN:
 		GameManager.parrot_on_captain = false
