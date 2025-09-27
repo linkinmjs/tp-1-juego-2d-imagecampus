@@ -12,11 +12,13 @@ var parrot_in_range: bool = false
 @export var pirate_has_cannon: bool = false
 @export_enum(CAPTAIN, PIRATE_CANNON, PIRATE_LOOKOUT, PIRATE_FISHERMAN) var pirate_class: String
 
+@onready var alert_animation: AnimationPlayer
+
 func _ready() -> void:
 	pirate = get_node("Pirate")
 	if pirate_class == PIRATE_CANNON:
 		cannon = get_node("Cannon")
-		
+		alert_animation = $Alert/AlertAnimation
 	action_area = get_node("ActionArea")
 	action_area.body_entered.connect(_on_action_area_body_entered)
 	action_area.body_exited.connect(_on_action_area_body_exited)
@@ -52,11 +54,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		_action_event()
 
 func _action_event():
-	pirate.play("action")
 	if pirate_class == PIRATE_CANNON:
-		cannon.play("action")
-	if pirate_class == PIRATE_LOOKOUT:
+		print("action 1")
+		pirate_cannon_shoot()
+	elif pirate_class == PIRATE_LOOKOUT:
+		print("action 2")
+		pirate.play("action")
 		GameManager.reveal_sea()
+	else:
+		print("action 3")
+		pirate.play("action")
 
 func update_animation():
 	if pirate.animation == "action" and pirate.is_playing():
@@ -66,3 +73,11 @@ func update_animation():
 	pirate.play("idle")
 	if pirate_has_cannon:
 		cannon.play("idle")
+
+func pirate_cannon_shoot() -> void:
+	if GameManager.collected_cannon_balls > 0:
+		GameManager.collected_cannon_balls -= 1
+		pirate.play("action")
+		cannon.play("action")
+	else:
+		alert_animation.play("alert")

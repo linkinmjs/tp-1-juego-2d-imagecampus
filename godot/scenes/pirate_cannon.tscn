@@ -1,9 +1,11 @@
-[gd_scene load_steps=25 format=3 uid="uid://51p65lhgra6s"]
+[gd_scene load_steps=30 format=3 uid="uid://51p65lhgra6s"]
 
 [ext_resource type="Texture2D" uid="uid://dwhorx0jimqgx" path="res://assets/sprites/characters/pirate_02/Attack.png" id="1_aw8to"]
 [ext_resource type="Script" uid="uid://dagw0t4nw7et3" path="res://scripts/pirate.gd" id="1_us4qm"]
 [ext_resource type="Texture2D" uid="uid://btuxg2qik4o1m" path="res://assets/sprites/characters/pirate_02/Idle.png" id="2_5y60m"]
 [ext_resource type="Texture2D" uid="uid://dnhms221x1c3v" path="res://assets/sprites/characters/pirate_02/Special.png" id="3_5y60m"]
+[ext_resource type="Texture2D" uid="uid://bdko7r8051w6p" path="res://assets/sprites/pirate_icons/Icons_12.png" id="5_fc6cb"]
+[ext_resource type="Texture2D" uid="uid://b4p23heqngm50" path="res://assets/UI/icons/Icons_06.png" id="6_nqma0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_us4qm"]
 atlas = ExtResource("1_aw8to")
@@ -152,6 +154,91 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_us4qm"]
 size = Vector2(24, 6.75)
 
+[sub_resource type="Animation" id="Animation_nqma0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollectCannonBall2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollectCannonBall2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollectCannonBall2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fc6cb"]
+resource_name = "alert"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollectCannonBall2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(0.196146, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -21)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollectCannonBall2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.366667, 0.400001, 0.433334, 0.466667, 0.500001, 0.533334, 0.680617, 0.713177, 0.741087, 0.766667, 0.799227, 0.829457, 1.23872),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.174533, 0.174533, -0.174533, 0.174533, 0.0, 0.0, -0.174533, 0.174533, -0.174533, 0.174533, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollectCannonBall2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0441879, 1.03872, 1.23872),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0w1x"]
+_data = {
+&"RESET": SubResource("Animation_nqma0"),
+&"alert": SubResource("Animation_fc6cb")
+}
+
 [node name="PirateCannon" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 32
@@ -187,3 +274,26 @@ collision_layer = 0
 position = Vector2(1, -28.5)
 shape = SubResource("RectangleShape2D_us4qm")
 debug_color = Color(0.2, 0.552941, 0.278431, 0.266667)
+
+[node name="Alert" type="Node2D" parent="."]
+position = Vector2(3.5, -58.5)
+
+[node name="CollectCannonBall2" type="Node2D" parent="Alert"]
+modulate = Color(1, 1, 1, 0)
+
+[node name="CannonBall" type="Sprite2D" parent="Alert/CollectCannonBall2"]
+texture_filter = 1
+position = Vector2(0, -3.5)
+texture = ExtResource("5_fc6cb")
+
+[node name="Cross" type="Sprite2D" parent="Alert/CollectCannonBall2"]
+modulate = Color(0.709804, 0, 0.368627, 0.870588)
+texture_filter = 1
+rotation = 0.785398
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("6_nqma0")
+
+[node name="AlertAnimation" type="AnimationPlayer" parent="Alert"]
+libraries = {
+&"": SubResource("AnimationLibrary_m0w1x")
+}
