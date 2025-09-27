@@ -11,4 +11,5 @@ func _process(delta: float) -> void:
 		queue_free()
 
 func _on_cloud_dispersed() -> void:
+	# TODO: Some animation here
 	queue_free()

@@ -22,7 +22,7 @@ func shoot() -> void:
 	var cannon_ball: RigidBody2D = cannon_ball_scene.instantiate()
 	cannon_ball.global_position = cannon_position.global_position
 	shoot_animation.restart()
-	GameManager.CannonBallShooted
+	GameManager.clouds_cover_ship(false)
 	add_child(cannon_ball)
 
 func _on_area_entered(area: Area2D) -> void:
@@ -34,7 +34,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_area_exited(area: Area2D) -> void:
 	if area.name == "CloudArea":
-		GameManager.clouds_cover_ship(false)
+		#GameManager.clouds_cover_ship(false)
 		pass
 	if area.name == "IslandArea":
 		GameManager.ship_colliding_island = false

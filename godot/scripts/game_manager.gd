@@ -4,7 +4,7 @@ signal sea_revealed
 signal player_hitted
 signal clouds_over_the_ship
 signal dispersed_clouds
-signal cannon_ball_shotted
+signal on_cannon_ball_shotted
 
 var life: int = 3
 var collected_coins: int = 0
@@ -39,7 +39,7 @@ func get_damage(damage: int):
 	
 func reveal_sea() -> void:
 	emit_signal("sea_revealed")
-	
+
 func clouds_cover_ship(is_cover: bool) -> void:
 	if is_cover:
 		emit_signal("clouds_over_the_ship")
@@ -47,5 +47,5 @@ func clouds_cover_ship(is_cover: bool) -> void:
 		print("dispersed_clouds!")
 		emit_signal("dispersed_clouds")
 
-func on_cannon_ball_shotted() -> void:
-	emit_signal("cannon_ball_shotted")
+func cannon_ball_shotted() -> void:
+	emit_signal("on_cannon_ball_shotted")
