@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://stc3fn0huqe5"]
+
+[ext_resource type="Script" uid="uid://dukteiomwi85k" path="res://scripts/collectibles_spawn.gd" id="1_rwhac"]
+[ext_resource type="PackedScene" uid="uid://dkm4v4jyo147e" path="res://scenes/collectible.tscn" id="2_f0f2b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6vuie"]
+radius = 33.8568
+
+[node name="CollectiblesSpawn" type="Area2D"]
+script = ExtResource("1_rwhac")
+collectible_scene = ExtResource("2_f0f2b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(15.1113, 9.79243)
+shape = SubResource("CircleShape2D_6vuie")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true

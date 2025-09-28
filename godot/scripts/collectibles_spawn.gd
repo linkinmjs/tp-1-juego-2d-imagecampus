@@ -16,7 +16,7 @@ func _on_spawn_timer_timeout() -> void:
 func spawn_collectible() -> void:
 	var collectible: Collectible = collectible_scene.instantiate()
 	collectible.global_position = get_random_position_in_shape()
-	collectible.collectible_type = GameManager.COLLECTIBLES_TYPES.pick_random()
+	collectible.collectible_type = GameManager.AVAILABLE_TYPES.pick_random()
 	add_child(collectible)
 
 func get_random_position_in_shape() -> Vector2:

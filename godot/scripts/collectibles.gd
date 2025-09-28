@@ -5,7 +5,7 @@ const COIN = GameManager.COLLECTIBLES_TYPES[0]
 const CANNON_BALL = GameManager.COLLECTIBLES_TYPES[1]
 const STAR = GameManager.COLLECTIBLES_TYPES[2]
 
-@export_enum(COIN, CANNON_BALL, STAR) var collectible_type: String
+@export_enum(COIN, CANNON_BALL) var collectible_type: String
 @export var amount: int = 1
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D

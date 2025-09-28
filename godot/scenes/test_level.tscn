@@ -23,6 +23,7 @@ position = Vector2(442, 371)
 [node name="Collectible" parent="." instance=ExtResource("3_j6w7d")]
 position = Vector2(562, 438)
 collectible_type = "cannon_ball"
+amount = null
 
 [node name="PirateCannon" parent="." instance=ExtResource("3_x4b8f")]
 position = Vector2(825, 587)

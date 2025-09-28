@@ -21,6 +21,7 @@ var ship_colliding_clouds: bool = false
 var ship_colliding_island: bool = false
 
 const COLLECTIBLES_TYPES = ["coin", "cannon_ball", "star"]
+const AVAILABLE_TYPES = [COLLECTIBLES_TYPES[0], COLLECTIBLES_TYPES[1]]
 const PIRATES_TYPES = ["captain", "pirate_cannon", "pirate_lookout", "pirate_fisherman"]
 
 func _ready() -> void:

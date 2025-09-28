@@ -28,14 +28,14 @@ size = Vector2(70, 1400)
 noise_type = 3
 frequency = 0.5
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gti6a"]
-light_mode = 2
-
 [sub_resource type="Curve2D" id="Curve2D_vt6qn"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 2925, 826, 0, 0, 0, 0, -220, 825)
 }
 point_count = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gti6a"]
+light_mode = 2
 
 [node name="BottomScene" type="Node2D"]
 script = ExtResource("1_7ymyq")
@@ -65,6 +65,7 @@ position = Vector2(343, 464)
 
 [node name="CollectiblesSpawn" parent="." instance=ExtResource("4_uyn6v")]
 position = Vector2(1263, 630)
+spawn_wait_time = 0.5
 
 [node name="Limits" type="Node2D" parent="."]
 
@@ -95,7 +96,16 @@ intensity = 80.0
 max_intensity = 150.0
 frequency = 5.0
 
+[node name="Clouds" type="Node2D" parent="."]
+
+[node name="CloudSpawn" parent="Clouds" instance=ExtResource("11_vt6qn")]
+curve = SubResource("Curve2D_vt6qn")
+clouds_scenes_to_spawn = Array[PackedScene]([ExtResource("12_6df1x")])
+timer_wait_time = 4.0
+spawn_on_scene = "Bottom"
+
 [node name="CLOUD TESTS" type="Node2D" parent="."]
+visible = false
 
 [node name="Cloud" type="Sprite2D" parent="CLOUD TESTS"]
 visibility_layer = 4
@@ -105,12 +115,3 @@ material = SubResource("CanvasItemMaterial_gti6a")
 position = Vector2(1452, 821)
 scale = Vector2(13, 13)
 texture = ExtResource("9_gti6a")
-
-[node name="Clouds" type="Node2D" parent="."]
-
-[node name="CloudSpawn" parent="Clouds" instance=ExtResource("11_vt6qn")]
-curve = SubResource("Curve2D_vt6qn")
-clouds_scenes_to_spawn = Array[PackedScene]([ExtResource("12_6df1x")])
-timer_wait_time = 4.0
-is_active = false
-spawn_on_scene = "Bottom"
