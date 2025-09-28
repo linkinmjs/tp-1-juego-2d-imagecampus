@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bcheeulj8hj3k"]
+[gd_scene load_steps=8 format=3 uid="uid://bcheeulj8hj3k"]
 
 [ext_resource type="Script" uid="uid://dtx8hak2uijij" path="res://scripts/bottom_cloud.gd" id="1_0vefp"]
 [ext_resource type="Texture2D" uid="uid://dkj41mmim3ew" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_1.png" id="2_h1hg6"]
@@ -6,66 +6,83 @@
 [ext_resource type="Texture2D" uid="uid://b6qckuyrj8k2k" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_4.png" id="5_etjii"]
 [ext_resource type="Texture2D" uid="uid://c3iogm1mlak3v" path="res://assets/sprites/clouds_white/Shape5/cloud_shape5_3.png" id="6_swo06"]
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7jkeu"]
+light_mode = 2
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_h1hg6"]
+light_mode = 2
+
 [node name="BottomCloud" type="PathFollow2D"]
 rotates = false
 script = ExtResource("1_0vefp")
 speed = 150.0
 
 [node name="Clouds" type="Node2D" parent="."]
-position = Vector2(644, 0)
+material = SubResource("CanvasItemMaterial_7jkeu")
 scale = Vector2(6, 6)
 
 [node name="CloudShape51" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-69, -1.5)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(73.3333, 0.333333)
 texture = ExtResource("2_h1hg6")
 
 [node name="CloudShape55" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-75, 39)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(67.3333, 40.8333)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape56" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-78, -31)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(64.3333, -29.1667)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape54" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-118, 45)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(24.3333, 46.8333)
 texture = ExtResource("5_etjii")
 
 [node name="CloudShape57" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-115, -11)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(27.3333, -9.16667)
 texture = ExtResource("6_swo06")
 
 [node name="CloudShape58" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-139, -40.75)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(3.33334, -38.9167)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape60" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-64.75, 10.25)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(77.5833, 12.0833)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape62" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-4.25, -19.25)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(138.083, -17.4167)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape63" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-43.75, -10.75)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(98.5833, -8.91667)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape64" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-20, 56.5)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(122.333, 58.3333)
 texture = ExtResource("4_pfpvd")
 
 [node name="CloudShape61" type="Sprite2D" parent="Clouds"]
 texture_filter = 1
-position = Vector2(-30.25, 16)
+material = SubResource("CanvasItemMaterial_h1hg6")
+position = Vector2(112.083, 17.8333)
 texture = ExtResource("6_swo06")

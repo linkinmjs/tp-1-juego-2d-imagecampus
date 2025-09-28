@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dwtlwto8dapiv"]
+[gd_scene load_steps=19 format=3 uid="uid://dwtlwto8dapiv"]
 
 [ext_resource type="Script" uid="uid://dsliubugmiwpq" path="res://scripts/bottom_scene.gd" id="1_7ymyq"]
 [ext_resource type="PackedScene" uid="uid://c5kqi0tjv1dm7" path="res://scenes/parallax_background.tscn" id="2_jtje2"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bt6ej2icbaj5w" path="res://scenes/parrot.tscn" id="7_uyn6v"]
 [ext_resource type="Script" uid="uid://bvcjm3lyhcrlq" path="res://scripts/shaker.gd" id="8_7ymyq"]
 [ext_resource type="Texture2D" uid="uid://cjr0gprqqyes6" path="res://assets/sprites/clouds_white/Shape2/cloud_shape2_1.png" id="9_gti6a"]
-[ext_resource type="Texture2D" uid="uid://ja03wj67t8ky" path="res://assets/sprites/mask.png" id="10_t8umi"]
 [ext_resource type="PackedScene" uid="uid://7d0nx5p5ko78" path="res://scenes/clouds/cloud_spawn.tscn" id="11_vt6qn"]
 [ext_resource type="PackedScene" uid="uid://bcheeulj8hj3k" path="res://scenes/bottom_cloud.tscn" id="12_6df1x"]
 
@@ -31,8 +30,6 @@ frequency = 0.5
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_gti6a"]
 light_mode = 2
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vt6qn"]
 
 [sub_resource type="Curve2D" id="Curve2D_vt6qn"]
 _data = {
@@ -99,7 +96,6 @@ max_intensity = 150.0
 frequency = 5.0
 
 [node name="CLOUD TESTS" type="Node2D" parent="."]
-visible = false
 
 [node name="Cloud" type="Sprite2D" parent="CLOUD TESTS"]
 visibility_layer = 4
@@ -108,20 +104,6 @@ texture_filter = 1
 material = SubResource("CanvasItemMaterial_gti6a")
 position = Vector2(1452, 821)
 scale = Vector2(13, 13)
-texture = ExtResource("9_gti6a")
-
-[node name="PointLight2D" type="PointLight2D" parent="CLOUD TESTS"]
-visible = false
-visibility_layer = 4
-position = Vector2(3006, 865)
-blend_mode = 1
-texture = ExtResource("10_t8umi")
-
-[node name="PointLight2D2" type="PointLight2D" parent="CLOUD TESTS"]
-visible = false
-visibility_layer = 4
-material = SubResource("CanvasItemMaterial_vt6qn")
-position = Vector2(389, 1490)
 texture = ExtResource("9_gti6a")
 
 [node name="Clouds" type="Node2D" parent="."]
