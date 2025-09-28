@@ -1,6 +1,7 @@
 extends Node
 
 signal sea_revealed
+signal evade_island
 signal player_hitted
 signal clouds_over_the_ship
 signal dispersed_clouds
@@ -23,6 +24,11 @@ var parrot_on_pirate_fisherman = false
 # Clouds and island on ship (used for top_scene)
 var ship_colliding_clouds: bool = false
 var ship_colliding_island: bool = false
+
+var treasure_limit: int = 3
+var island_limit: int = 2
+var current_treasures: int = 0
+var current_islands: int = 0
 
 const COLLECTIBLES_TYPES = ["coin", "cannon_ball", "star"]
 const AVAILABLE_TYPES = [COLLECTIBLES_TYPES[0], COLLECTIBLES_TYPES[1]]
@@ -53,9 +59,11 @@ func waste_ammo(ammo: int):
 func reveal_sea() -> void:
 	emit_signal("sea_revealed")
 
+func evade() -> void:
+	emit_signal("evade_island")
+
 func clouds_cover_ship(is_cover: bool) -> void:
 	if is_cover:
 		emit_signal("clouds_over_the_ship")
 	elif not is_cover:
-		print("dispersed_clouds!")
 		emit_signal("dispersed_clouds")

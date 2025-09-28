@@ -11,6 +11,7 @@ func _ready() -> void:
 	ship_area_2d.area_entered.connect(_on_area_entered)
 	ship_area_2d.area_exited.connect(_on_area_exited)
 	GameManager.on_cannon_ball_shotted.connect(shoot)
+	GameManager.evade_island.connect(move_ship)
 
 func _process(_delta: float) -> void:
 	pass
@@ -23,6 +24,9 @@ func shoot() -> void:
 	shoot_animation.restart()
 	GameManager.clouds_cover_ship(false)
 	add_child(cannon_ball)
+
+func move_ship() -> void:
+	pass
 
 func _on_area_entered(area: Area2D) -> void:
 	if area.name == "CloudArea":

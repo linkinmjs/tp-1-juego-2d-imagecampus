@@ -62,6 +62,8 @@ func _action_event():
 	elif pirate_class == PIRATE_LOOKOUT:
 		pirate.play("action")
 		GameManager.reveal_sea()
+	elif pirate_class == CAPTAIN:
+		GameManager.evade()
 	else:
 		pirate.play("action")
 

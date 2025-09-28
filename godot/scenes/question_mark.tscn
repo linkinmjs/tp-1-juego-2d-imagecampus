@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cgyqnrgvdgkkk"]
+[gd_scene load_steps=8 format=3 uid="uid://cgyqnrgvdgkkk"]
 
 [ext_resource type="Script" uid="uid://dwo5gosbtcqlx" path="res://scripts/question_mark.gd" id="1_0infq"]
 [ext_resource type="Texture2D" uid="uid://bv5s16p0yjamd" path="res://assets/sprites/icons/Icons_40.png" id="1_ne3or"]
 [ext_resource type="PackedScene" uid="uid://d1xtcop22ap8l" path="res://scenes/island.tscn" id="2_6sfaj"]
+[ext_resource type="PackedScene" uid="uid://bm2xgqsipyq36" path="res://scenes/treasure.tscn" id="3_ho0jj"]
 
 [sub_resource type="Animation" id="Animation_6sfaj"]
 length = 0.001
@@ -69,7 +70,7 @@ _data = {
 rotates = false
 loop = false
 script = ExtResource("1_0infq")
-events = Array[PackedScene]([ExtResource("2_6sfaj")])
+events = Array[PackedScene]([ExtResource("2_6sfaj"), ExtResource("3_ho0jj")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
