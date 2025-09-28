@@ -37,20 +37,20 @@ theme_override_constants/margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 180
+theme_override_constants/separation = 250
 alignment = 1
 
-[node name="Label" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="AmmoLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Ammo: 0"
 label_settings = ExtResource("2_rns2u")
 
-[node name="Label2" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="HealthLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Health: 100"
 label_settings = ExtResource("2_rns2u")
 
-[node name="Label3" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="PanelContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Score: 0"
 label_settings = ExtResource("2_rns2u")

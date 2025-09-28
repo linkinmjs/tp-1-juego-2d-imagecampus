@@ -13,12 +13,16 @@ var parrot_in_range: bool = false
 @export_enum(CAPTAIN, PIRATE_CANNON, PIRATE_LOOKOUT, PIRATE_FISHERMAN) var pirate_class: String
 
 @onready var alert_animation: AnimationPlayer
+@onready var shoot_timer: Timer
+@onready var is_shooting: bool = false
 
 func _ready() -> void:
 	pirate = get_node("Pirate")
 	if pirate_class == PIRATE_CANNON:
 		cannon = get_node("Cannon")
 		alert_animation = $Alert/AlertAnimation
+		shoot_timer = $ShootTimer
+		shoot_timer.timeout.connect(_on_shoot_timer_timeout)
 	action_area = get_node("ActionArea")
 	action_area.body_entered.connect(_on_action_area_body_entered)
 	action_area.body_exited.connect(_on_action_area_body_exited)
@@ -49,20 +53,16 @@ func _on_action_area_body_exited(_body: Node):
 		GameManager.parrot_on_pirate_fisherman = false
 
 func _unhandled_input(event: InputEvent) -> void:
-	## TODO: evitar solapamiento de acciones
 	if parrot_in_range and event.is_action_pressed("action"):
 		_action_event()
 
 func _action_event():
 	if pirate_class == PIRATE_CANNON:
-		print("action 1")
 		pirate_cannon_shoot()
 	elif pirate_class == PIRATE_LOOKOUT:
-		print("action 2")
 		pirate.play("action")
 		GameManager.reveal_sea()
 	else:
-		print("action 3")
 		pirate.play("action")
 
 func update_animation():
@@ -75,9 +75,16 @@ func update_animation():
 		cannon.play("idle")
 
 func pirate_cannon_shoot() -> void:
+	if is_shooting:
+		return
+	is_shooting = true
+	shoot_timer.start()
 	if GameManager.collected_cannon_balls > 0:
-		GameManager.collected_cannon_balls -= 1
+		GameManager.waste_ammo(1)
 		pirate.play("action")
 		cannon.play("action")
 	else:
 		alert_animation.play("alert")
+		
+func _on_shoot_timer_timeout() -> void:
+	is_shooting = false

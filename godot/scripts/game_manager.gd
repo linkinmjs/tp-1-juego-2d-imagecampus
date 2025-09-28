@@ -6,6 +6,10 @@ signal clouds_over_the_ship
 signal dispersed_clouds
 signal on_cannon_ball_shotted
 
+signal update_ammo
+signal update_health
+signal update_score
+
 var life: int = 3
 var collected_coins: int = 0
 var collected_cannon_balls: int = 10
@@ -31,13 +35,21 @@ func get_collectible(type: String, amount: int):
 	# Coin
 	if type == COLLECTIBLES_TYPES[0]:
 		collected_coins += amount
+		emit_signal("update_score")
 	#Cannon Ball
 	elif type == COLLECTIBLES_TYPES[1]:
 		collected_cannon_balls += amount
+		emit_signal("update_ammo")
 
 func get_damage(damage: int):
 	life -= damage
-	
+	emit_signal("update_health")
+
+func waste_ammo(ammo: int):
+	collected_cannon_balls -= ammo
+	emit_signal("update_ammo")
+	emit_signal("on_cannon_ball_shotted")
+
 func reveal_sea() -> void:
 	emit_signal("sea_revealed")
 
@@ -47,6 +59,3 @@ func clouds_cover_ship(is_cover: bool) -> void:
 	elif not is_cover:
 		print("dispersed_clouds!")
 		emit_signal("dispersed_clouds")
-
-func cannon_ball_shotted() -> void:
-	emit_signal("on_cannon_ball_shotted")

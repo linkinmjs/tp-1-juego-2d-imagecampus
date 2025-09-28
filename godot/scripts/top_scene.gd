@@ -10,11 +10,10 @@ extends Node2D
 func _ready() -> void:
 	ship_area_2d.area_entered.connect(_on_area_entered)
 	ship_area_2d.area_exited.connect(_on_area_exited)
+	GameManager.on_cannon_ball_shotted.connect(shoot)
 
 func _process(_delta: float) -> void:
-	# TODO replace next hardcode. Maybe listening some signal
-	if Input.is_action_just_pressed("action") and GameManager.parrot_on_pirate_cannon:
-		shoot()
+	pass
 
 func shoot() -> void:
 	shoot_delay.start()
